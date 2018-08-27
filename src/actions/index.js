@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const SUCESSO_LOGIN_USUARIO = 'sucesso_login_usuario';
 export const SUCESSO_LOGOUT_USUARIO = 'sucesso_logout_usuario';
+export const SUCESSO_CADASTRO_UNIVERSIDADE = 'sucesso_cadastro_universidade';
 export const SUCESSO_LOGIN_ADMIN = 'sucesso_login_admin';
 export const SUCESSO_LOGOUT_ADMIN = 'sucesso_logout_admin';
 export const ERRO_LOGIN = 'error_login';
@@ -81,5 +82,24 @@ export function admin_sair()
     return {
         type: SUCESSO_LOGOUT_ADMIN,
         payload: ''
+    };
+}
+
+export function cadastrar_universidade(values) {
+    const request = axios.post(`${BASE_URL_PRODUCAO}/admin/universidade/cadastrar`, values);
+
+    return (dispatch) => {
+        request.then((response) => {
+            dispatch({
+                type: SUCESSO_CADASTRO_UNIVERSIDADE,
+                payload: response
+            });
+        }).catch((error) => {
+            console.log(error);
+            dispatch({
+                type: ERRO_LOGIN,
+                payload: error.response.data
+            });
+        });
     };
 }

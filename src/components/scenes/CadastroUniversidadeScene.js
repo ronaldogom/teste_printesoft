@@ -4,6 +4,14 @@ import {connect} from 'react-redux';
 import CadastroUniversidadeForm from '../common/CadastroUniversidadeForm';
 
 class CadastroUniversidadeScene extends Component{
+
+    redirecionaDashboard()
+    {
+        console.log(this.props.cadastro_universidade_sucesso);
+        if(this.props.cadastro_universidade_sucesso)
+            return <Redirect to="/admin/dashboard"/>;
+    }
+
     renderConteudo()
     {
         if(localStorage.getItem('token') && localStorage.getItem('permissao') === 'admin')
@@ -13,7 +21,7 @@ class CadastroUniversidadeScene extends Component{
                     <div style={{width: '100%', height: '74px'}}>
                         <button className="btn" onClick={this.props.admin_sair} style={{margin: '20px', float: 'right'}}>Sair</button>
                     </div>
-                    <CadastroUniversidadeScene/>
+                    <CadastroUniversidadeForm/>
                 </div>
             );
         }
@@ -31,14 +39,15 @@ class CadastroUniversidadeScene extends Component{
             <div className="container">
                 {this.renderConteudo()}
                 {this.verificaAuth()}
+                {this.redirecionaDashboard()}
             </div>
         );
     }
 }
 
-function mapStateToProps({admin_login})
+function mapStateToProps({admin_login, cadastro_universidade_sucesso})
 {
-    return {admin_login};
+    return {admin_login, cadastro_universidade_sucesso};
 }
 
 export default connect(mapStateToProps)(CadastroUniversidadeScene);

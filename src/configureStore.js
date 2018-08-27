@@ -8,7 +8,8 @@ import reducers from './reducers';
 
 const persistConfig = {
   key: 'root',
-  storage
+  storage,
+  blacklist: ['cadastro_universidade_sucesso']
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
