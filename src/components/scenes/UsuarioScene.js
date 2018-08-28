@@ -7,6 +7,7 @@ class LoginScene extends Component{
 
     renderConteudo()
     {
+        console.log(this.props.usuario_login);
         if(localStorage.getItem('token') && localStorage.getItem('permissao') === 'usuario')
         {
             return(
@@ -26,6 +27,7 @@ class LoginScene extends Component{
 
     verificaAuth()
     {
+        console.log(this.props.usuario_login);
         if(!this.props.usuario_login)
             return <Redirect to='/'/>;
     }

@@ -30,11 +30,11 @@ class CadastroUniversidadeScene extends Component{
 
     render(){
         return(
-            <div>
-                <div style={{textAlign: 'center'}}>
+            <div className="center" >
+                <div style={{textAlign: 'center', marginBottom: '20px'}}>
                     <strong>Cadastrar Nova Universidade</strong>
                 </div>
-                <form className="form-group row center" style={{height: 'auto', margin: '0'}} onSubmit={this.handleSubmit}>
+                <form className="form-group row" style={{height: 'auto', margin: '0'}} onSubmit={this.handleSubmit}>
                     <div className="col-sm-1 form-input">
                         <label style={{color: '#001c84'}}>Nome</label>
                         <input className="form-control" placeholder='Nome' type="text" id="nome-input" ref={(input) => this.nome = input}/>

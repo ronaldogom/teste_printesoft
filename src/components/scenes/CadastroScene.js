@@ -13,7 +13,7 @@ class LoginScene extends Component{
     redirecionaLogin()
     {
         if(this.props.cadastro_sucesso)
-            return <Redirect to="/login"/>;
+            return <Redirect to="/"/>;
     }
 
     render()

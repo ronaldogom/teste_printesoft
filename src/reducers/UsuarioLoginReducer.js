@@ -5,23 +5,18 @@ export default function (state = false, action) {
     switch (action.type)
     {
         case SUCESSO_LOGIN_USUARIO:
+            alert(action.payload.data.mensagem);
 
             let usuario = action.payload.data.usuario;
 
-            if(usuario != null)
+            if(usuario.permitido)
             {
-                if(usuario.status === "aprovado")
-                {
-                    console.log('sucesso');
-                    localStorage.setItem('token', usuario.token);
-                    localStorage.setItem('permissao', 'usuario');
-                    return true;
-                }
+                localStorage.setItem('token', usuario.token);
+                localStorage.setItem('permissao', 'usuario');
+                return true;
             }
 
-            alert(action.payload.data.mensagem);
-
-            return false;
+            return state;
 
         case SUCESSO_LOGOUT_USUARIO:
 

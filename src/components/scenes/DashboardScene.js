@@ -1,9 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Redirect, Link} from 'react-router-dom';
-import {admin_sair} from '../../actions';
+import {admin_sair, reset_cadastro_universidade_reducer} from '../../actions';
+
 
 class LoginScene extends Component{
+
+    componentWillMount(props)
+    {
+        this.props.reset_cadastro_universidade_reducer();
+    }
 
     renderConteudo()
     {
@@ -56,4 +62,4 @@ function mapStateToProps({admin_login})
     return {admin_login};
 }
 
-export default connect(mapStateToProps, {admin_sair})(LoginScene);
+export default connect(mapStateToProps, {admin_sair, reset_cadastro_universidade_reducer})(LoginScene);

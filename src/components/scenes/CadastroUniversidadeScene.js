@@ -9,7 +9,9 @@ class CadastroUniversidadeScene extends Component{
     {
         console.log(this.props.cadastro_universidade_sucesso);
         if(this.props.cadastro_universidade_sucesso)
+        {
             return <Redirect to="/admin/dashboard"/>;
+        }
     }
 
     renderConteudo()
@@ -18,9 +20,6 @@ class CadastroUniversidadeScene extends Component{
         {
             return(
                 <div style={{width: '100%'}}>
-                    <div style={{width: '100%', height: '74px'}}>
-                        <button className="btn" onClick={this.props.admin_sair} style={{margin: '20px', float: 'right'}}>Sair</button>
-                    </div>
                     <CadastroUniversidadeForm/>
                 </div>
             );
