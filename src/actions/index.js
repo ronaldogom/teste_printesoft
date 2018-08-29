@@ -14,7 +14,7 @@ export const ERRO_LOGIN = 'error_login';
 export const SUCESSO_CADASTRO = 'sucesso_cadastro';
 export const ERRO_CADASTRO = 'erro_cadastro';
 
-const BASE_URL_PRODUCAO = 'https://r-labs.com.br/teste_printesoft_lravel/public/api';
+const BASE_URL_PRODUCAO = 'https://r-labs.com.br/teste_printesoft_laravel/public/api';
 
 // MÉTODOS USUARIO--------------------------------------------------------------------------------------------------------
 export function usuario_login(values) {
