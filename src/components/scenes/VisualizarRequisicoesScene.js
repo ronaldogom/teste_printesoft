@@ -85,6 +85,8 @@ class VisualizarRequisicoesScene extends Component{
         formData.append('usuario_id', this.usuario_aux.id);
         formData.append('novo_status', event.target.id);
 
+        console.log(this.usuario_aux);
+
         this.props.atualizar_status_usuario(formData);
     }
 
