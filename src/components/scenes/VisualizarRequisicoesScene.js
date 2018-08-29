@@ -82,10 +82,10 @@ class VisualizarRequisicoesScene extends Component{
         let formData = new FormData();
         
         formData.append('token', localStorage.getItem('token'));
-        formData.append('usuario_id', this.usuario_aux.id);
+        formData.append('usuario_id', usuario_aux);
         formData.append('novo_status', event.target.id);
 
-        console.log(this.usuario_aux);
+        console.log(usuario_aux);
 
         this.props.atualizar_status_usuario(formData);
     }
