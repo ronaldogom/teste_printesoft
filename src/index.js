@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import registerServiceWorker from './registerServiceWorker';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {HashRouter, Switch, Route} from 'react-router-dom';
 import LoginScene from './components/scenes/LoginScene';
 import AdminLoginScene from './components/scenes/AdminLoginScene';
 import CadastroScene from './components/scenes/CadastroScene';
@@ -18,7 +18,7 @@ import {store, persistor} from './configureStore';
 ReactDOM.render(
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-            <BrowserRouter >
+            <HashRouter >
                 <Switch>
                     <Route exact path='/' component={LoginScene}/>
                     <Route path='/admin/entrar' component={AdminLoginScene}/>
@@ -28,7 +28,7 @@ ReactDOM.render(
                     <Route path='/usuario/bemvindo' component={UsuarioScene}/>
                     <Route path='/usuario/cadastrar' component={CadastroScene}/>
                 </Switch>
-            </BrowserRouter>
+            </HashRouter>
         </PersistGate>
     </Provider>
     ,document.getElementById('root'));
