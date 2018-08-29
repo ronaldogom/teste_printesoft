@@ -95,7 +95,7 @@ export function cadastrar_universidade(values) {
 }
 
 export function atualizar_status_usuario(values) {
-    const request = axios.post(`${BASE_URL_PRODUCAO}/admin/usuario/status/atualiziar`, values);
+    const request = axios.post(`${BASE_URL_PRODUCAO}/admin/usuario/status/atualizar`, values);
 
     return (dispatch) => {
         request.then((response) => {
