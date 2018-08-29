@@ -109,6 +109,14 @@ class VisualizarRequisicoesScene extends Component{
                 );
             });
         }
+        else
+        {
+            return (
+                <div className="center">
+                    <h2>Nenhuma requisição no momento</h2>
+                </div>
+            );
+        }
     }
 
     selecionarUniversidade(event)
